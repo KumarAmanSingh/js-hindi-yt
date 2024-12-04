@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing images</h2>
+    <div>
+        <ul id ="images">
+            <li><img width="200" id="photoshop" src="images\photoshop.png"></li>
+
+
+
+        </ul>
+    </div>
+    
+</body>
+<script>
+    // document.getElementById('photoshop').onclick = function(){
+    //     alert('dog in photoshop')
+    // }
+
+    //Event-propagation works as bubbling,it will go from inside id(photoshop) to outside id(images),it happens when 
+    //addEventlistner's third variable is false
+
+    // document.getElementById('images').addEventListener('click',function(){
+    //     console.log("ul clicked")
+    // },false)
+    // document.getElementById('photoshop').addEventListener('click',function(e){
+    //     console.log("photoshop clicked")
+    //     e.stopPropagation() //it will stop bubbling means it will not go for outside id(ul),it will stop at inside id(photoshop)
+    // },false)
+
+    //when its 3rd variable is true then it follows Event-capturing behavior means firstly outside id(images)
+    //will get printed and then inside id(photoshop will get printed in console log)
+
+    // document.getElementById('images').addEventListener('click',function(){
+    //     console.log("ul clicked")
+    // },true)
+    // document.getElementById('photoshop').addEventListener('click',function(){
+    //     console.log("photoshop clicked")
+    // },true)
+
+// disppear photoshop image when we will click it
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.tagName); 
+        if(e.target.tagName==="IMG"){
+            let removeit = e.target.parentNode
+            removeit.remove()
+             //method-2: removeit.parentNode.removeChild(removeit)
+        }
+    },false)
+
+
+</script>
+</html>

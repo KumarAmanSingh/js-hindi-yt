@@ -1,0 +1,22 @@
+DOM basic structure is:
+
+                        DOCUMENT
+                           |
+                          HTML
+                            |
+                  HEAD             BODY
+                    |                |
+              title   meta   heading   paragraph
+
+->document.getElementById('title')  - gives title
+->document.getElementById('title')  orjist write (title)
+->title.innerHTML - gives innerhtml
+->title.textContent - gives content present      
+inside title
+->title.innerText - gives content present      
+inside title
+-> the difference between them is innerText gives only text but innerContent will give the content which is not displayed means which is not visible
+
+-> # is used to select ID
+-> . is used to select Class
+

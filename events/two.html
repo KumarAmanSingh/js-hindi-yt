@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>chai aur code</h2>
+    <button id="stop">stop</button>
+</body>
+<script>
+    // let changetext =function(){document.querySelector('h2').innerHTML="Best js tutorial on youtube"};
+    //  setTimeout(changetext,2000)
+    // setTimeout(function(){
+    //     console.log("Aman-Singh")
+    // },2000)
+
+    //we have to stop timeout before changing the text,use cleartimeout
+    let changetext =function(){document.querySelector('h2').innerHTML="Best js tutorial on youtube"};
+    const stopchange = setTimeout(changetext,2000)
+    document.getElementById('stop').addEventListener('click',function(){
+        clearTimeout(stopchange)
+        console.log("stopped")
+    })
+    //setTimeout will run for only once but setIinterval will run for many times
+    
+</script>
+</html>
